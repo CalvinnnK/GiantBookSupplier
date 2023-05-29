@@ -7,10 +7,10 @@
 
 @section('content')
 
-<div class="container-fluid" style="min-height: 80vh; ">
-    <div class="container" style="width: 50%">
+<div class="container-fluid d-flex flex-grow-1">
+    <div class="container-fluid" style="width: 70%">
         <h4 style="background-color: grey;">Category {{$category->category}}</h4>
-        <div class="d-flex flex-wrap justify-content-center" id="card_container">
+        <div class="d-flex gap-2" id="card_container">
         @foreach($books as $book)
           <div class="card" style="width: 20%;">
             <img src="{{$book->book_image}}" class="card-img-top" alt="...">
@@ -22,6 +22,7 @@
           </div>
         @endforeach
     </div>
+    {{$books->links('pagination::bootstrap-5')}}
     </div>
 </div>
 @endsection

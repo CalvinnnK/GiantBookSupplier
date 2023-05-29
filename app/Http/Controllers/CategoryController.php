@@ -17,8 +17,7 @@ class CategoryController extends Controller
     public function show($id){
         $cat = Category::find($id);
         $bookid = $cat->bookdetail->pluck('book_id')->unique();
-        $books = Book::whereIn('id', $bookid)->get();
-
+        $books = Book::whereIn('id', $bookid)->paginate(5);
         
         return view('category',[
             'category' => $cat,

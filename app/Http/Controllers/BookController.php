@@ -13,7 +13,8 @@ use App\Models\Publisher;
 class BookController extends Controller
 {
     public function show():View{
-        $b = Book::all();
+        $b = Book::paginate(5);
+
         return view('homepage',[
             'books' => $b
         ]);

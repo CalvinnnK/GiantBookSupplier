@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<div class="container" style='height:75vh'>
+<div class="container d-flex flex-column flex-grow-1" >
     <div class="container" style="width: 50%">
         <h4 style="background-color: grey;">Contacts</h4>
         <h4>Store Address : </h4>

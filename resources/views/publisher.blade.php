@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="container" style="height: 80vh width: 80%">
-    <div class="container-fluid align-items-center ">
+    <div class="container-fluid">
       <h4 style="background-color: grey;">Publisher List</h4>
-    <div class="d-flex flex-wrap justify-content-center" id="card_container">
+    <div class="d-flex gap-2 justify-content-center" id="card_container">
         @foreach($publisher as $p)
           <div class="card" style="width: 20%;">
             <img src="{{$p->logo}}" class="card-img-top" alt="...">
@@ -21,7 +21,7 @@
         @endforeach
     </div>
   </div>
-
+  {{$publisher->links('pagination::bootstrap-5')}}
 </div>
 @endsection
 

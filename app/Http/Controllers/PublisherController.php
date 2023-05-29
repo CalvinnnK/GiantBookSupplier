@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class PublisherController extends Controller
 {
     public function showall(){
-        $publisher = Publisher::all();
+        $publisher = Publisher::paginate(5);
         return view('publisher',[
             'publisher' => $publisher
         ]);
